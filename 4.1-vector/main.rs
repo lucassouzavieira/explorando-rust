@@ -5,10 +5,11 @@ use std::mem;
 pub fn main() {
   let mut numbers: Vec<i32> = vec![1, 2, 3, 4];
 
-  numbers[2] = 20;
   // Adicionando elementos
   numbers.push(5);
   numbers.push(6);
+
+  println!("{:?}", numbers);
 
   // Ultimo valor
   let last: i32 = numbers.pop().unwrap();
@@ -17,25 +18,25 @@ pub fn main() {
   println!("{:?}", numbers);
 
   // Valor
-  println!("Valor: {}", numbers[0]);
+  // println!("Valor: {}", numbers[0]);
 
-  // Tamanho do Vetor 
-  println!("Tamanho: {}", numbers.len());
+  // // // Tamanho do Vetor 
+  // println!("Tamanho: {}", numbers.len());
 
-  // Tamanho em bytes
-  println!("Vetor tem tamanho de {} bytes", mem::size_of_val(&numbers));
+  // // // Tamanho em bytes
+  // println!("Vetor tem tamanho de {} bytes", mem::size_of_val(&numbers));
 
-  // Slicing
-  let slice: &[i32] = &numbers[1..3];
-  println!("Slice: {:?}", slice);
+  // // // Slicing
+  // let slice: &[i32] = &numbers[1..3];
+  // println!("Slice: {:?}", slice);
 
-  // Maneiras de iterar um vetor
-  // Imutavel
+  // // Maneiras de iterar um vetor
+  // // Imutavel
   for x in numbers.iter() {
     println!("Number: {}", x);
   }
 
-  // Mutavel
+  // // Mutavel
   for x in numbers.iter_mut() {
     *x *= 2;
   }

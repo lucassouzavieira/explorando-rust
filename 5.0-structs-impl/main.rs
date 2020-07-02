@@ -4,9 +4,9 @@
 use std::string::String;
 
 // Traits
-// trait Speaker {
-//     fn get_speaker(&self) -> String;
-// }
+trait Speaker {
+    fn get_speaker(&self) -> String;
+}
 
 #[derive(Debug)]
 struct Techlive {
@@ -24,9 +24,16 @@ impl Techlive {
     }
 }
 
+impl Speaker for Techlive {
+    fn get_speaker(&self) -> String {
+        return self.speaker.to_string();
+    }
+}
+
 pub fn main() {
     let last = Techlive{edition: 8, speaker: String::from("Alisson Gomes")};
     last.print();
-    println!("{:?}", last);
+    println!("Edicao {}", last.get_edition());
+    println!("Palestrante {}", last.get_speaker());
 }
   

@@ -10,9 +10,18 @@ fn is_even(n: i32) -> Result<String, String> {
 }
 
 // unwrap / expect
-// panic!
 pub fn main() {
-    panic!("Erro nao recuperavel!");
-    let res = is_even(3).expect("Erro!");
-    println!("{}", res);
+    // panic!("Erro nao recuperavel!");
+    let res = is_even(6);
+
+    match res {
+        Ok(res) => {
+            println!("Ok");
+        },
+        Err(res) => {
+            println!("Tratamento");
+        }
+    }
+
+    println!("Fim do programa");
 }
